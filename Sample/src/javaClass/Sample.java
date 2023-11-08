@@ -1,6 +1,8 @@
 package javaClass;
 
 import java.util.Arrays;
+import java.util.Scanner;
+
 
 public class Sample {
 
@@ -10,9 +12,7 @@ public class Sample {
 		
 		
 		
-		int a=3;
-		int b=5;
-		int c=3;
+	
 		
 
 	}
