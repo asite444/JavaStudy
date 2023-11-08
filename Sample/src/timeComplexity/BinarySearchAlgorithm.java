@@ -1,5 +1,6 @@
 package timeComplexity;
 
+import java.util.Scanner;
 
 /*
  이진탐색 알고리즘 
@@ -12,8 +13,8 @@ public class BinarySearchAlgorithm {
 
 	public static void main(String[] args) {
 		int[] nums= {15,28,34,56,68,78};
-		
-		System.out.println(binarySearch(nums, 34));
+		Scanner scanner=new Scanner(System.in);
+		System.out.println(binarySearch(nums,scanner.nextInt()));
 
 	}
 
