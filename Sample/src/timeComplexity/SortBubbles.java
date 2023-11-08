@@ -1,8 +1,12 @@
-package codingTest;
+package timeComplexity;
 
 import java.util.Scanner;
 
 //버블 정렬
+
+/** 시간복잡도 O(n^2)인, 버블 정렬. 인접한 두개의 원소를 비교하여 정렬하는 알고리즘
+ * 
+ */
 public class SortBubbles {
 
 	public static void main(String[] args) {

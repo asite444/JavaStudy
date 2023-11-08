@@ -174,7 +174,7 @@ public class SimpleNumberBaseballGame implements NumberBaseballGame  {
 				System.out.println("게임이 종료되었습니다.");
 				break;
 			}
-			else {System.out.println("입력이 정확하지 않습니다. 다시 입력하십시오.");}
+			else System.out.println("입력이 정확하지 않습니다. 다시 입력하십시오.");
 		}
 
 	}
