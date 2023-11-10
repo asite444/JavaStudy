@@ -31,7 +31,6 @@ public class MargeSort02 {
 	        int mid = (low + high) / 2;
 	        sort(arr, 0, mid);
 	        sort(arr, mid, high);
-	        System.out.println("high:"+high);
 	        merge(arr, low, mid, high);
 	    }
 
