@@ -37,10 +37,14 @@ public interface BattleShipGameInterface {
      * 플레이어가 좌표를 선택하여 공격을 수행한다.
      * @param x 선택한 좌표의 가로 위치
      * @param y 선택한 좌표의 세로 위치
-     * @return 공격 결과 (맞췄는지, 어떤 크기의 배인지 등)
+ 
      */
     String playerAttack(char x, char y);
     
+    /**
+     * 컴퓨터가 사용자의 보드판에 공격을 수행한다.
+     */
+    void computerAttack();
     /**
      * 주어진 좌표와 배의 방향을 기반으로 배를 배치할 수 있는지 여부를 확인한다.
      * @param x 배를 배치하려는 가로 좌표

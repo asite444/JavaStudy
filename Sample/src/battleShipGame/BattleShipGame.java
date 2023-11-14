@@ -24,6 +24,7 @@ public class BattleShipGame implements BattleShipGameInterface {
 	private int directionShip;											//배의 배치 방향(0:가로 1:세로)
 	private String userAttack;											//사용자 공격좌표
 	private int userHitCount;                                           //사용자 공격 명중 횟수
+	private int computerHitCount;                                       //컴퓨터 공격 명중 횟수
 
 	@Override
 	public boolean initializeGame(String userShipPositionResponse) {
@@ -119,8 +120,8 @@ public class BattleShipGame implements BattleShipGameInterface {
 
 	@Override
 	public String playerAttack(char x, char y) {
-		
-		
+
+
 		if(playerBBoard[y- '0'][x- '0']=='□') {
 			playerAttackBoard[y- '0'][x- '0']='Ⅹ';
 			System.out.println("                           빗맞췄습니다!");
@@ -137,6 +138,36 @@ public class BattleShipGame implements BattleShipGameInterface {
 		}
 		return null;
 	}
+
+	@Override
+	public void computerAttack() {
+		int computerAttackX;
+		int computerAttackY;
+		while(true) {
+			computerAttackX=random.nextInt(10);
+			computerAttackY=random.nextInt(10);
+
+			//랜덤값 지정시 해당 좌표값이 컴퓨터가 이미 공격한 좌표인 경우
+			if(playerABoard[computerAttackY][computerAttackX]=='Ⅹ' || playerABoard[computerAttackY][computerAttackX]=='●')continue;
+			break;
+		}
+
+		if(playerABoard[computerAttackY][computerAttackX]=='□') {
+			System.out.println("                           컴퓨터의 공격이 빗맞았습니다!");
+			playerABoard[computerAttackY][computerAttackX]='Ⅹ';
+		}else {
+
+			switch(playerABoard[computerAttackY][computerAttackX]) {
+			case '★': System.out.println("                 컴퓨터의 공격이 ★(1)크기의 배 명중!"); break;
+			case '◆': System.out.println("                 컴퓨터의 공격이 ◆(2)크기의 배 명중!"); break;
+			case '■': System.out.println("                 컴퓨터의 공격이 ■(3)크기의 배 명중!"); break;
+			case '▼': System.out.println("                 컴퓨터의 공격이 ▼(4)크기의 배 명중!"); break;
+			case '♥': System.out.println("                 컴퓨터의 공격이 ♥(5)크기의 배 명중!"); break;
+			}
+			playerABoard[computerAttackY][computerAttackX]='●';
+			computerHitCount++;
+		}
+	};
 
 	@Override
 	public boolean canPlaceShip(int x, int y, int shipSize,int directionShip,boolean isUser) {
@@ -245,7 +276,7 @@ public class BattleShipGame implements BattleShipGameInterface {
 				System.out.println();
 			}
 		}
-		
+
 		//컴퓨터의 현재 보드판 출력
 		else if(isUser.equals("computer")) {
 			System.out.println("  0 1 2 3 4 5 6 7 8 9");
@@ -257,7 +288,7 @@ public class BattleShipGame implements BattleShipGameInterface {
 				System.out.println();
 			}
 		}
-		
+
 		//사용자 현재 보드판과, 사용자가 공격한 보드판 출력
 		else if(isUser.equals("all")) {
 			System.out.println("     사용자 보드판                             사용자 공격 보드판");
@@ -267,7 +298,7 @@ public class BattleShipGame implements BattleShipGameInterface {
 				for (int j = 0; j < playerABoard[i].length; j++) {
 					System.out.print(playerABoard[i][j]);
 				}
-	
+
 				System.out.print("                      "+i+" ");
 				for (int j = 0; j < playerAttackBoard[i].length; j++) {
 					System.out.print(playerAttackBoard[i][j]);
@@ -280,6 +311,23 @@ public class BattleShipGame implements BattleShipGameInterface {
 
 	@Override
 	public void displayInstructions() {
+		
+	    System.out.println("<< BATTLESHIP 게임 규칙 >>");
+        System.out.println("1. 플레이어 두 명이 참여합니다.");
+        System.out.println("2. 10*10의 격자 공간에 각자 5척의 배를 가지고 원하는 위치에 배를 놓습니다.");
+        System.out.println("3. 5척의 배는 각각 1, 2, 3, 4, 5의 길이를 가집니다.");
+        System.out.println("4. 두 배를 중복하여 놓을 수 없으며, 마찬가지로 범위를 벗어나는 공간에 배를 놓을 수 없습니다.");
+        System.out.println("5. 각 배는 각 길이 수 만큼의 좌표값을 모두 맞춰야 해당 배를 맞춘 것으로 판단됩니다.");
+        System.out.println("6. A 플레이어가 배를 원하는 위치에 놓고, B 플레이어가 컴퓨터가 되어 자동으로 배를 놓고, A가 맞추는 방식입니다.");
+        System.out.println("7. A 플레이어가 좌표값을 선택했을 때, 비어있는 곳인지, 배가 있는 위치인지를 판단하고, 어느 크기의 배인지도 알려줍니다.");
+        System.out.println("   하나의 배를 모두 맞춘 경우, 상대방의 어떤 길이의 배가 격침되었음을 알립니다.");
+        System.out.println("8. A 플레이어가 5개의 배를 모두 격침시켰을 경우 A 플레이어의 승리이며, B 플레이어가 A 플레이어의 배를 모두 격침시킨 경우 B 플레이어(컴퓨터)의 승리입니다.");
+        System.out.println("   이후 해당 게임은 종료됩니다.");
+        System.out.println("9. 플레이어는 원하는 배치 좌표를 기준으로 항상 오른쪽 또는 아래 방향으로만 배치합니다.");
+        System.out.println();
+        System.out.println("원하는 메뉴 명 또는 숫자를 입력하십시오.");
+        System.out.println();
+    
 
 	}; 
 
@@ -342,21 +390,30 @@ public class BattleShipGame implements BattleShipGameInterface {
 
 					userAttack=scanner.next();
 					userAttack=userAttack.replaceAll(" ", "");
-					
+
 					containsNonDigit = userAttack.matches(".*[^0-9].*"); //사용자로부터 입력받은 값에 숫자가 아닌 문자의 포함 여부
 					if (containsNonDigit || userAttack.length()!=2 ) { 
 						System.out.println("2자리의 숫자가 아닙니다. 다시 입력하십시오"); 
 						continue;
 					}
+
+
 					playerAttack(userAttack.charAt(0),userAttack.charAt(1));
-					System.out.println();
-					
-					displayGameStatus("all");
 					if(userHitCount==15) {
 						System.out.println("모두 명중시켰습니다! 당신의 승리!!");
 						break;
-						}
-				
+					}
+					computerAttack();
+					if(computerHitCount==15) {
+						System.out.println("컴퓨터가 당신의 배를 모두 명중시켰습니다! 컴퓨터의 승리!");
+						break;
+					}
+					System.out.println();
+
+					displayGameStatus("all");
+
+
+
 				}
 
 
