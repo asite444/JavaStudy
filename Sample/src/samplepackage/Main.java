@@ -4,27 +4,35 @@ import java.io.*;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		char c='1';
+		String s="1234";
+		char c2='□';
+		int arr[]= {1,5,3,8,4,9,6};
+		
+		/*
+		 * 1:★ 
+		 * 2:◆ 
+		 * 3:■
+		 * 4:▼
+		 * 5:♥
+		 */
+		
+		System.out.println("  0 1 2 3 4 5 6 7 8 9");
+		System.out.println("0 ■□□□□□□□□□");
+		System.out.println("1 ■□□□★□□□□□");
+		System.out.println("2 ■□□□□□□□□□");
+		System.out.println("3 □□□□□□□♥□□");
+		System.out.println("4 □□□□◆□□♥□□");
+		System.out.println("5 □□□□◆□□♥□□");
+		System.out.println("6 □□□□□□□♥□□");
+		System.out.println("7 ▼▼▼▼□□□♥□□");
+		System.out.println("8 □□□□□□□□□□");
+		System.out.println("9 □□□□□□□□□□");
+		
+		
+		
+		//System.out.println(s.charAt(2)>'2');
+		
 
-		//  long n = Long.parseLong(br.readLine());
-		long n[]=new long[10];
-		for(int i=0;i<10;i++) n[i]=i;
-
-		br.close();
-
-		int count = 0; //수행 홧수 저장하는 변수
-		for(int x=0;x<10;x++) {
-			for(int i  = 1; i <= n[x]-2; i++){
-				for(int j = i+1; j <= n[x]-1; j++){
-					for(int k = j+1; k <= n[x]; k++){
-						count++;
-					}
-				}
-			}
-			System.out.println(count);
-			count=0;
-			
-		}
-		//System.out.println(count);
 	}
 }
