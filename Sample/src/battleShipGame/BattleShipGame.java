@@ -258,7 +258,7 @@ public class BattleShipGame implements BattleShipGameInterface {
 
 		}
 		//컴퓨터가 제대로 랜덤 배치시켰는지 확인을 위함
-		displayGameStatus("computer");
+		//displayGameStatus("computer");
 
 	}
 

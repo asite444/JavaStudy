@@ -10,6 +10,7 @@ public class RunGame {
 		//컴퓨터가 랜덤 배치를 잘 하는가?
 		//battleShipGame.initializePlayerABoard();		
 		//battleShipGame.computerPlaceShips();
+		//battleShipGame.displayGameStatus("computer");
 		//System.out.println("                           빗맞췄습니다!");
 		//System.out.println("                  당신의 공격이 ★(1)크기의 배 명중!");
 		//System.out.println();
