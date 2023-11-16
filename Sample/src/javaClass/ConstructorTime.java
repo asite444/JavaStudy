@@ -3,6 +3,7 @@ package javaClass;
 import java.util.Calendar;
 
 public class ConstructorTime {
+	
 	Calendar calendar=Calendar.getInstance();
 	private int hour;
 	private int minute;
@@ -77,7 +78,7 @@ public class ConstructorTime {
 		else System.out.println("0"+hour+"시"+minute+"분"+second+"초");
 	}
 	public void display3() {
-		if(hour>12)		System.out.println("0"+(hour-12)+":"+minute+":"+second);
+		if(hour>12)		System.out.println("0"+(hour-12)+":"+minute+":"+second); 
 		else System.out.println("0"+hour+":"+minute+":"+second);
 	}
 

@@ -1,6 +1,7 @@
 package javaClass;
 
 public class Constructor {
+
 	 String city;
 	 String nation;
 	 int nationcode;
@@ -73,6 +74,7 @@ class ChildSecond extends Child{
 	public ChildSecond() {
 		this("북경","중국",82);
 		System.out.println("자식의 자식 생성자");
+	
 	}
 
 	ChildSecond(String city,String nation,int nationcode){
