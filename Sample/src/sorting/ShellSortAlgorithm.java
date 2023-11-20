@@ -1,4 +1,4 @@
-package timeComplexity;
+package sorting;
 
 /**삽입정렬의 단점을 보완한 정렬법. gap 이라는 간격을 두고 각 부분 요소를 삽입정렬하는 방식.
  * @정렬종류:셸 정렬 

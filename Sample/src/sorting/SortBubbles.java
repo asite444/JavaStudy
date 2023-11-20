@@ -1,4 +1,4 @@
-package timeComplexity;
+package sorting;
 
 import java.util.Scanner;
 

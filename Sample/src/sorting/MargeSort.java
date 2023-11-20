@@ -1,11 +1,14 @@
-package codingTest;
+package sorting;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
 
-public class MargeSortDataFlow {
+public class MargeSort {
+
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		//BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(System.out));
@@ -18,7 +21,7 @@ public class MargeSortDataFlow {
 		array=sort(array);
 		
 		for(int i:array) {
-			System.out.print(i);
+			System.out.println(i);
 		}
 
 	}

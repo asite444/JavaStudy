@@ -1,4 +1,4 @@
-package timeComplexity;
+package sorting;
 /*
  * 
 선택정렬(SelectionSort)

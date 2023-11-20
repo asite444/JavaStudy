@@ -1,4 +1,4 @@
-package timeComplexity;
+package sorting;
 
 public class InsertionSortAlgorithm {
 	
