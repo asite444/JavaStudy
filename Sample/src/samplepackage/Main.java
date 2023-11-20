@@ -4,26 +4,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class Main {	
+
+public class Main {
+	
+	
 	public static void main(String[] args) {
+		
+		
+    Scanner scanner=new Scanner(System.in);
     
-		Scanner in = new Scanner(System.in);
-		StringBuilder sb = new StringBuilder();
-		
-		int N = in.nextInt();
-		
-		// list 계열 중 하나를 쓰면 된다.
-		ArrayList<Integer> list = new ArrayList<>();
-		
-		for(int i = 0; i < N; i++) {
-			list.add(in.nextInt());
-		}
-		
-		Collections.sort(list);
-		
-		for(int value : list) {
-			sb.append(value).append('\n');
-		}
-		System.out.println(sb);
+    String address=scanner.nextLine();
+    System.out.println(address.substring(0,6));
 	}
 }
