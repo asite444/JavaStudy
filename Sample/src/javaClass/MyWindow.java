@@ -18,7 +18,7 @@ public class MyWindow  extends JFrame{
 	//초기화 기능 구현
 	public MyWindow() {
 		//타이틀 작성
-		super.setTitle("我第一次做的视窗。");
+		super("我第一次做的视窗。");//super.setTitle("我第一次做的视窗。");
 		
 		//버튼 생성
 		
