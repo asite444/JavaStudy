@@ -37,7 +37,7 @@ public class TestMoveBall extends JFrame {
 	
 	//공의 정보
 	int ball_x = 0;//GRIMPAN_W/2;
-	int ball_y = GRIMPAN_H/2;
+	int ball_y = 0;//GRIMPAN_H/2;
 	int ball_size=30;
 	
 	public TestMoveBall() {
@@ -82,10 +82,18 @@ public class TestMoveBall extends JFrame {
 	}
 	
 	void timer_function() {
+		int exchange=0;
 		//System.out.println("----");
 		ball_x ++;
 		
 		grimPan.repaint();// paintComponent() call
+		if( ball_y==-1) exchange=0;
+		else if(ball_y==100) exchange=1;
+		
+		if(exchange==0) ball_y++;
+		else ball_y--;
+		System.out.println(ball_y);
+		
 	}
 
 

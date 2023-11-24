@@ -101,3 +101,4 @@ class ArrInteger {
 		this.number[1]=y;
 	}
 }
+
