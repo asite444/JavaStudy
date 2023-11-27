@@ -1,6 +1,7 @@
 package collection.map;
 
 import java.util.HashMap;
+import java.util.Map.Entry;
 
 /*
  HashMap
@@ -30,7 +31,12 @@ public class HashMapExample {
 		chinaCity.put("난징", "南京");
 		chinaCity.put("하얼빈", "哈尔滨");
 		chinaCity.put("샤면", "厦门");
+		chinaCity.put(null, "없음");//Null 허용
+		System.out.println(chinaCity.get("충칭")+"<------------------");
 		
+		for (Entry<String, String> entry : chinaCity.entrySet()) {
+		    System.out.println("[Key]:" + entry.getKey() + " [Value]:" + entry.getValue());
+		}
 		
 	}
 	

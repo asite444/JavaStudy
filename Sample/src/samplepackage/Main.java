@@ -10,21 +10,18 @@ interface Inter{
 public class Main {
 	
 
-	int a=3; 
+
 	
 	public static void main(String[] args) {
 
-		
-	}	
-	static Inter inter=(b)->{
-		int a=3;
-		int c=3;
-		
-		
-		b=3;
-		System.out.println(b);
-		System.out.println(a);
-		System.out.println("lkjjkllkjlkj");
+		try {
+			System.out.println(3/0);
+			
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+	
 	};
 }
 
