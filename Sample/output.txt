@@ -1,3 +1,5 @@
 Hello, World!
 This is an example of BufferedWriter.
 我现在学JAVA。
+我现在学JAVA。
+A

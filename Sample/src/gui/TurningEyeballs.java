@@ -79,7 +79,7 @@ public class TurningEyeballs extends JFrame {
 
 
 		//위치
-		this.setLocation(700, 30);
+		this.setLocation(1, 1);
 
 		//크기
 		//this.setSize(400, 400);

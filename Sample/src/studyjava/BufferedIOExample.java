@@ -16,6 +16,10 @@ public class BufferedIOExample {
             writer.write("This is an example of BufferedWriter.");
             writer.newLine(); // 새로운 줄로 이동
             writer.write("我现在学JAVA。");
+            writer.newLine(); // 새로운 줄로 이동
+            writer.write("我现在学JAVA。");
+            writer.newLine(); // 새로운 줄로 이동
+            writer.write(65);
             writer.close(); // 파일 쓰기 종료
 
             // BufferedReader를 사용한 파일 읽기 예시

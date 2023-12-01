@@ -1,6 +1,7 @@
 package samplepackage;
 
-
+import java.util.ArrayList;
+import java.util.List;
 
 interface Inter{
 	int a=3;
@@ -14,14 +15,20 @@ public class Main {
 	
 	public static void main(String[] args) {
 
-		try {
-			System.out.println(3/0);
-			
-		}
-		catch (Exception e) {
-			System.out.println(e);
-		}
+		List<String> list=new ArrayList<String>();
+		
 	
+		list.add("dd");
+		list.add("ee");
+		list.add("ff");
+		list.add("ff");
+		list.add("d");
+		list.remove("ff");
+		for(String i:list) {
+			System.out.println(i);
+		}
+		//System.out.println(list.get(0));
+		
 	};
 }
 
