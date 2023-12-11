@@ -1,4 +1,4 @@
-package codingTest;
+package codingTest.other;
 //풀지 못한 문제
 
 /*
